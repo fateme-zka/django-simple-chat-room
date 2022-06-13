@@ -69,8 +69,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chat_room.wsgi.application' # this is for regular situation of our app
-ASGI_APPLICATION = 'chat_room.asgi.application' # this for long time chat connection
+WSGI_APPLICATION = 'chat_room.wsgi.application'  # this is for regular situation of our app
+ASGI_APPLICATION = 'chat_room.asgi.application'  # this for long time chat connection
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -120,3 +120,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = 'core:frontpage'
+LOGIN_REDIRECT_URL = 'core:frontpage'
+LOGIN_URL = 'core:login'
