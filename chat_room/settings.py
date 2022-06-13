@@ -73,6 +73,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chat_room.wsgi.application'  # this is for regular situation of our app
 ASGI_APPLICATION = 'chat_room.asgi.application'  # this for long time chat connection
 
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
+
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
