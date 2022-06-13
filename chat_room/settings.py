@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'channels',  # it is used form asynchronize app like our real-time chat app
     'core.apps.CoreConfig',
+    'room.apps.RoomConfig',
 ]
 
 MIDDLEWARE = [
