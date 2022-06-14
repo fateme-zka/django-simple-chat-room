@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from .models import Room
+from .models import Room,Message
+
+
+admin.site.register(Message)
 
 
 @admin.register(Room)
