@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from .models import Room
+from .models import Room, Message
 
 
 @login_required(login_url='core:login')
@@ -15,6 +15,10 @@ def rooms(request):
 @login_required(login_url='core:login')
 def room(request, the_slug):
     room = Room.objects.get(slug=the_slug)
+    messages = Message.objects.filter(room=room)[:30]
 
-    context = {'room': room}
+    context = {
+    'room': room,
+    'messages': messages
+    }
     return render(request, 'room/room.html', context)
